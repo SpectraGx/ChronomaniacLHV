@@ -58,7 +58,12 @@ public class RoomSpawn : MonoBehaviour
     {
        if (other.CompareTag("SpawnPoint"))
        {
-            Destroy(gameObject);
+            if (other.GetComponent<RoomSpawn>().spawned==false && spawned==false)
+            {
+                Instantiate(templates.closedRoom, transform.position,Quaternion.identity);
+                Destroy(gameObject);
+            }
+            spawned = true;
        }
     }
 }

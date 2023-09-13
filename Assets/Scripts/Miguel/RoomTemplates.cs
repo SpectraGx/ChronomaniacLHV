@@ -11,4 +11,7 @@ public class RoomTemplates : MonoBehaviour
 
     public GameObject closedRoom;
 
+    public List<GameObject>rooms;
+
+
 }
