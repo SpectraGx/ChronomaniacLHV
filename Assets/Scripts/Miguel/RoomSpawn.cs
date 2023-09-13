@@ -24,7 +24,7 @@ public class RoomSpawn : MonoBehaviour
     }
 
 
-    void Spawnn()
+    void Spawn()
     {
         if(spawned==false)
         {
@@ -54,16 +54,11 @@ public class RoomSpawn : MonoBehaviour
        
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter(Collider other)
     {
        if (other.CompareTag("SpawnPoint"))
        {
-        if(other.GetComponent<RoomSpawn>().spawned==false && spawned==false )
-        {
-            Instantiate(templates.closedRoom,transform.position,Quaternion.identity);
             Destroy(gameObject);
-        }
-            spawned = true;
        }
     }
 }
