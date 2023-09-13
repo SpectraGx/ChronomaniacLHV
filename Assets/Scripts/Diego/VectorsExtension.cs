@@ -2,17 +2,18 @@ using UnityEngine;
 
 public static class VectorsExtension
 {
-    public static Vector3 WithAxis (this Vector3 vector, Axis axis , float value)
+    public static Vector3 WithAxis(this Vector3 vector, Axis axis, float value)
     {
-        Return new Vector3{}
-            x:axis == Axis.X ? value = vector.x,
-            y:axis == Axis.Y ? value = vector.y,
-            z:axis -- Axis.Z ? value = vector.z
-    };
+        return new Vector3
+        {
+            x = axis == Axis.X ? value : vector.x,
+            y = axis == Axis.Y ? value : vector.y,
+            z = axis == Axis.Z ? value : vector.z
+        };
     }
 }
 
-public enum  Axis 
+public enum Axis
 {
-    X, Y,
+    X, Y, Z
 }
