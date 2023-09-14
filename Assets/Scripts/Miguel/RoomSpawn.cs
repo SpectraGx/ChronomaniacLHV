@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RoomSpawn : MonoBehaviour
@@ -15,7 +16,7 @@ public class RoomSpawn : MonoBehaviour
 
     private RoomTemplates templates;
     private int rand;
-    private bool spawned = false;
+    public bool spawned = false;
 
     void Start()
     {
@@ -56,14 +57,15 @@ public class RoomSpawn : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-       if (other.CompareTag("SpawnPoint"))
+       if (other.gameObject.CompareTag("SpawnPoint"))
        {
-            if (other.GetComponent<RoomSpawn>().spawned==false && spawned==false)
+            if (other.gameObject.GetComponent<RoomSpawn>().spawned==false && spawned==false)
             {
-                Instantiate(templates.closedRoom, transform.position,Quaternion.identity);
+                Instantiate(templates.closedRoom,transform.position,Quaternion.identity);
                 Destroy(gameObject);
             }
             spawned = true;
        }
     }
+    
 }

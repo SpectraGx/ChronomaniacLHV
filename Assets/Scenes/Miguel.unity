@@ -1945,6 +1945,9 @@ MonoBehaviour:
   - {fileID: 5304165982306669382, guid: de373fe60b2ce8440a21f98601c15495, type: 3}
   - {fileID: 2623770464154742361, guid: 732d7227875cf5a458a606aa00ea86e5, type: 3}
   closedRoom: {fileID: 8551113141848999271, guid: 2232b34e92215044982d9b7f9a27eb99, type: 3}
+  rooms: []
+  boss: {fileID: 2334765105611499593, guid: 86bd34f5ad9fbfd42a47c04e671e07de, type: 3}
+  simpleEnemies: {fileID: 3480765425996112541, guid: e8b9f139bfafc9446971c00ecb20f74e, type: 3}
 --- !u!4 &987869574
 Transform:
   m_ObjectHideFlags: 0
@@ -2277,6 +2280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openSide: 2
+  spawned: 0
 --- !u!65 &1097948100
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2477,6 +2481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openSide: 4
+  spawned: 0
 --- !u!65 &1169435406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3333,6 +3338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openSide: 1
+  spawned: 0
 --- !u!65 &1826156716
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3533,6 +3539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openSide: 3
+  spawned: 0
 --- !u!65 &1982576916
 BoxCollider:
   m_ObjectHideFlags: 0
