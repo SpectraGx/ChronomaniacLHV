@@ -22,7 +22,7 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPlayerInRange && Input.GetButtonDown("Fire1"))
+        if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
 
             if (!didDialogueStart)
