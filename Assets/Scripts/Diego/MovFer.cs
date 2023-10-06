@@ -9,11 +9,15 @@ public class MoveFer : MonoBehaviour
     public int maxHealth = 100; 
     private int currentHealth; 
     private Vector3 initialPosition;
+    public float knockbackForce = 10f;
+    private Rigidbody2D rb;
 
     private void Start()
     {
         currentHealth = maxHealth; 
-        initialPosition = transform.position;  
+        initialPosition = transform.position;
+        rb = GetComponent<Rigidbody2D>();
+        initialPosition = transform.position;
     }
 
     private void Update()
@@ -42,7 +46,7 @@ public class MoveFer : MonoBehaviour
         // Verificar si la colisión es con un enemigo
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            
+            TakeHitAndKnockback(collision.contacts[0].point);
             TakeDamage(20);
 
             if (currentHealth <= 0)
@@ -61,5 +65,16 @@ public class MoveFer : MonoBehaviour
     {      
         transform.position = initialPosition;
         currentHealth = maxHealth;
+    }
+
+    private void TakeHitAndKnockback(Vector2 hitPoint)
+    {
+        ApplyKnockback(hitPoint);
+    }
+
+    private void ApplyKnockback(Vector2 hitPoint)
+    {
+        Vector2 knockbackDirection = ((Vector2)transform.position - hitPoint).normalized;
+        rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
     }
 }
