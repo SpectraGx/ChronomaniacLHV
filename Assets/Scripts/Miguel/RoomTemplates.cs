@@ -21,7 +21,7 @@ public class RoomTemplates : MonoBehaviour
 
     private void Start()
     {
-        Invoke("SpawnEnemies",3f);
+        Invoke("SpawnEnemies",2f);
     }
 
     void SpawnEnemies()
