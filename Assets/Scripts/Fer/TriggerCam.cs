@@ -8,7 +8,7 @@ public class TriggerCam : MonoBehaviour
     public CinemachineVirtualCamera vcam;
     private void Start()
     {
-        vcam=GetComponentInChildren<CinemachineVirtualCamera>();
+        vcam=GetComponentInParent<CinemachineVirtualCamera>();
         
     }
     private void OnTriggerEnter2D(Collider2D collision)
