@@ -6,7 +6,7 @@ public class Melee : MonoBehaviour
 {
     public float damageRadius = 2f;
     public LayerMask enemyLayer;
-    public float attackCooldown = 0.5f;
+    public float attackCooldown = 0.6f;
 
     private float lastAttackTime = 0f;
 
@@ -25,8 +25,7 @@ public class Melee : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            // Aquí puedes agregar la lógica para dañar al enemigo, por ejemplo:
-            // enemy.GetComponent<EnemyHealth>().TakeDamage(damageAmount);
+            
         }
     }
 
