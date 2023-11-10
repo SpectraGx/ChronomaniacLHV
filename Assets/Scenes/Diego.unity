@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 234516447}
   - component: {fileID: 234516446}
   - component: {fileID: 234516445}
+  - component: {fileID: 234516450}
   m_Layer: 0
   m_Name: EnemyTest
   m_TagString: Enemy
@@ -296,6 +297,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &234516450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234516444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31986ff6eff87d4b992c652df8bae90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletEnemy: {fileID: 7909000270825186996, guid: a821cdd344b5a284cb5d9f053eb19a95, type: 3}
+  playerTag: Player
+  fireRate: 1
 --- !u!1 &274087701
 GameObject:
   m_ObjectHideFlags: 0

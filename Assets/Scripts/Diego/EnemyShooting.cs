@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemyShooting : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    public GameObject bulletEnemy;
     public string playerTag = "Player";
     public float fireRate = 0.7f;
+    public float bulletSpeed = 4.0f;
 
     private Transform player;
     private float nextFireTime = 0f;
@@ -16,7 +17,7 @@ public class EnemyShooting : MonoBehaviour
         player = GameObject.FindGameObjectWithTag(playerTag).transform;
         if (player == null)
         {
-            Debug.LogError("Player not found. Make sure the player object has the tag 'Player'.");
+            Debug.LogError("Player no encontrado");
         }
     }
 
@@ -36,7 +37,18 @@ public class EnemyShooting : MonoBehaviour
             Vector2 direction = (player.position - transform.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
-            Instantiate(bulletPrefab, transform.position, rotation);
+
+            GameObject bullet = Instantiate(bulletEnemy, transform.position, rotation);
+            Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+
+            if (bulletRb != null)
+            {
+                bulletRb.velocity = direction * bulletSpeed;
+            }
+
+            Destroy(bullet, 2f); // Destruye la bala
+
         }
     }
+
 }
