@@ -6979,6 +6979,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PISO
       objectReference: {fileID: 0}
+    - target: {fileID: 5617943278524507745, guid: 9354fdf5968e3004e8aa516ec7e5f5ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
