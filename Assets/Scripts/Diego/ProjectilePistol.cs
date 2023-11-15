@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectilePistol : MonoBehaviour
 {
     public float pistolSpeed;
+    public GameObject projectilePistol;
 
     // Start is called before the first frame update
     void Start()
@@ -16,5 +17,6 @@ public class ProjectilePistol : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.up * pistolSpeed * Time.deltaTime);
+        Destroy(projectilePistol, 1.5f);
     }
 }
