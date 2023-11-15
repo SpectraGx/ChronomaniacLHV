@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Shotgun : MonoBehaviour
 {
-    public Transform firePoint;
-    public GameObject bulletPrefab;
+    public Transform PointShot;
+    public GameObject projectilePistol;
     public int pelletsCount = 8;
     public float spreadAngle = 20f;
     public float fireRate = 1f;
@@ -17,7 +17,7 @@ public class Shotgun : MonoBehaviour
         if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + 1f / fireRate;
-            Fire();
+            Fire();            
         }
     }
 
@@ -27,8 +27,8 @@ public class Shotgun : MonoBehaviour
         {
             // Calculate a random angle within the spread angle
             float randomAngle = Random.Range(-spreadAngle, spreadAngle);
-            Quaternion rotation = firePoint.rotation * Quaternion.Euler(0, 0, randomAngle);
-            Instantiate(bulletPrefab, firePoint.position, rotation);
+            Quaternion rotation = PointShot.rotation * Quaternion.Euler(0, 0, randomAngle);
+            Instantiate(projectilePistol, PointShot.position, rotation);
         }
     }
 }

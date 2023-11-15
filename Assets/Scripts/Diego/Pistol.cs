@@ -27,8 +27,7 @@ public class Pistol : MonoBehaviour
                 nextShotTime = Time.time + timeBetweenShots;
                 GameObject projectile = Instantiate(projectilePistol, PointShot.position, PointShot.rotation);
 
-                // Destruir el objeto "projectilePistol" después de 2 segundos
-                Destroy(projectile, 1.5f);
+                Destroy(projectilePistol, 1.5f);
             }
         }
     }

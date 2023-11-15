@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 170961787}
   - component: {fileID: 170961788}
+  - component: {fileID: 170961789}
   m_Layer: 0
   m_Name: EnemyGun
   m_TagString: Untagged
@@ -208,6 +209,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &170961789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170961786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31986ff6eff87d4b992c652df8bae90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletEnemy: {fileID: 7909000270825186996, guid: a821cdd344b5a284cb5d9f053eb19a95, type: 3}
+  playerTag: Player
+  fireRate: 0.7
+  bulletSpeed: 4
 --- !u!1 &234516444
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  moveSpeed: 5
+  moveSpeed: 1
 --- !u!50 &234516446
 Rigidbody2D:
   serializedVersion: 4
@@ -477,12 +494,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 274087701}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a19ec4ba8c23ff04e909238c912da590, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bb44fbecd57f524597ddeeb007b4d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PointShot: {fileID: 1071329919}
   projectilePistol: {fileID: 3939964508921997781, guid: 9ea9ccf3f446ad0428aebe395a28ea7d, type: 3}
-  timeBetweenShots: 0.2
+  pelletsCount: 4
+  spreadAngle: 15
+  fireRate: 1
 --- !u!1 &288030421
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,7 +769,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &601907564
 GameObject:
   m_ObjectHideFlags: 0
