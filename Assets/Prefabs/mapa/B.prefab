@@ -6590,6 +6590,7 @@ GameObject:
   - component: {fileID: 7625027763988111781}
   - component: {fileID: 5834039171165118259}
   - component: {fileID: 3955299923775688355}
+  - component: {fileID: 3073296062025944460}
   m_Layer: 0
   m_Name: Cube (43)
   m_TagString: Untagged
@@ -6640,7 +6641,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a57c657b4aaa9cb4495b661aef3ab7f6, type: 2}
+  - {fileID: 2100000, guid: 35d6b8d2fde12d84a971ebc872b6926c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6707,6 +6708,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3073296062025944460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8429832634296444384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7150c1ad6c88f47b8f49811ccef991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textures:
+  - {fileID: 2800000, guid: 9ce05831f3c28a342878a3612152053d, type: 3}
+  - {fileID: 2800000, guid: 9d5aed179948034418ac042ec4ac19c9, type: 3}
+  - {fileID: 2800000, guid: e5d5d3cfeb83b3042b014b6da5646246, type: 3}
+  speed: 1
+  time: 1
 --- !u!1 &8470898916864334525
 GameObject:
   m_ObjectHideFlags: 0
