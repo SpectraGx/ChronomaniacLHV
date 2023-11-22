@@ -7,8 +7,8 @@ public class texturaanimada : MonoBehaviour
     //3D Version
     public Texture2D[] textures;
     MeshRenderer rend;
-    public float speed;
-    public float time;
+     float speed = 4;
+     float time;
 
     private void Start()
     {
