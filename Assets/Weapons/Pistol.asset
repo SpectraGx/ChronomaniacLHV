@@ -16,3 +16,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   fireRate: 1
   damage: 20
+  shootBullets: []

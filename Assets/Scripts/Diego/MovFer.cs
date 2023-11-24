@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveFer : MonoBehaviour
 {
+    public Weapons currentWeapon;
     public float speedMove = 5f;
     public Transform weapon;
     public int maxHealth = 100; 
