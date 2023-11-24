@@ -12,6 +12,7 @@ public class Weapons : ScriptableObject
     public int damage = 20;
     // Start is called before the first frame update
 
+    public AudioClip[] shootBullets;
     public void Shoot()
     {
         Instantiate(bulletPrefab, GameObject.Find("PointShot").transform.position, Quaternion.identity);
