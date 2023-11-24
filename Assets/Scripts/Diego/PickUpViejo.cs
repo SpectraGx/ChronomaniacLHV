@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponPickup : MonoBehaviour
+public class PickUpViejo : MonoBehaviour
 {
     private bool isPickedUp = false;
     private GameObject weapon; //referencia al script del arma
