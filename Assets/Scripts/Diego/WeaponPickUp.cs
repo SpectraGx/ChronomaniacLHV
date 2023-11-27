@@ -11,7 +11,7 @@ public class WeaponPickUp : MonoBehaviour
         if(target.tag == "Player")
         {
             target.GetComponent<MoveFer>().currentWeapon = weapon;
-            target.transform.GetChild(3).GetComponent<SpriteRenderer>().sprite = weapon.currentWeaponSpr;
+            target.GetComponent<SpriteRenderer>().sprite = weapon.currentWeaponSpr;
             Destroy(gameObject);
         }
     }
