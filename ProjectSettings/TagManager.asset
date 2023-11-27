@@ -8,6 +8,7 @@ TagManager:
   - SpawnPoint
   - PJ
   - Enemy
+  - Weapon
   layers:
   - Default
   - TransparentFX
