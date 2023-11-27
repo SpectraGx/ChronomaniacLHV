@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6851936339212375567}
   - component: {fileID: 8401278928405258526}
   - component: {fileID: 167146760691209532}
+  - component: {fileID: -8530758108749417350}
   m_Layer: 0
   m_Name: AR(Anubis)
   m_TagString: Weapon
@@ -130,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18134832, y: 0.12588787}
   m_EdgeRadius: 0
+--- !u!114 &-8530758108749417350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8193443780289935633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a30e06deeaf5acc41a81616eaaad38bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 51e4887045c54f944b053c36a45adb36, type: 2}
