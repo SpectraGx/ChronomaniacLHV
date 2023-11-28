@@ -1,18 +1,62 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class EnemyAnubis : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float velocidadMovimiento = 3f;
+    public float frecuenciaDisparo = 2f;
+    public float velocidadBala = 10f;
+    public float tiempoDeVidaBala = 1.5f;
+    public int numBalasPorDisparo = 5; // balas en cada disparo
+    public float anguloDispersión = 15f; // dispersión de las balas
+    public GameObject bulletAnubis;
+    public Transform puntoDisparo;
+    public Transform weaponAnubis;
+
+    private Transform jugador;
+
+    private void Start()
     {
-        
+        jugador = GameObject.FindGameObjectWithTag("Player").transform;
+        InvokeRepeating("Disparar", 1f, 1f / frecuenciaDisparo);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        MoverHaciaJugador();
+
+        if (jugador != null && weaponAnubis != null)
+        {
+            Vector3 direccion = jugador.position - weaponAnubis.position;
+            direccion.z = 0;
+            weaponAnubis.up = direccion.normalized;
+        }
+    }
+
+    private void MoverHaciaJugador()
+    {
+        if (jugador != null)
+        {
+            Vector3 direccion = jugador.position - transform.position;
+            direccion.Normalize();
+            transform.Translate(direccion * velocidadMovimiento * Time.deltaTime);
+        }
+    }
+
+    private void Disparar()
+    {
+        if (jugador != null && bulletAnubis != null && puntoDisparo != null)
+        {
+            for (int i = 0; i < numBalasPorDisparo; i++)
+            {               
+                float anguloActual = Random.Range(-anguloDispersión, anguloDispersión);
+                Quaternion rotacionDisparo = Quaternion.AngleAxis(anguloActual, Vector3.forward);
+                Vector2 direccionDisparo = rotacionDisparo * puntoDisparo.up;
+                
+                GameObject proyectil = Instantiate(bulletAnubis, puntoDisparo.position, rotacionDisparo);
+                proyectil.GetComponent<Rigidbody2D>().velocity = direccionDisparo * velocidadBala;
+
+                Destroy(proyectil, tiempoDeVidaBala);
+            }
+        }
     }
 }
