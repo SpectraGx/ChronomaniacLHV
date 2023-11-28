@@ -199,7 +199,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -237,7 +237,6 @@ GameObject:
   - component: {fileID: 234516448}
   - component: {fileID: 234516447}
   - component: {fileID: 234516446}
-  - component: {fileID: 234516445}
   - component: {fileID: 234516450}
   m_Layer: 0
   m_Name: EnemyTest
@@ -246,20 +245,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &234516445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234516444}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb1c1a3328268ca4992e859885564ddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTag: Player
-  moveSpeed: 1
 --- !u!50 &234516446
 Rigidbody2D:
   serializedVersion: 4
@@ -412,8 +397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b31986ff6eff87d4b992c652df8bae90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMovimiento: 3
-  frecuenciaDisparo: 2
+  velocidadMovimiento: 2
+  frecuenciaDisparo: 0.5
   bulletEnemy: {fileID: 7909000270825186996, guid: a821cdd344b5a284cb5d9f053eb19a95, type: 3}
   puntoDisparo: {fileID: 601907565}
 --- !u!1 &274087701
@@ -715,7 +700,7 @@ MonoBehaviour:
   speedMove: 10
   weapon: {fileID: 274087702}
   maxHealth: 100
-  knockbackForce: 10
+  knockbackForce: 3
 --- !u!61 &315897025
 BoxCollider2D:
   m_ObjectHideFlags: 0

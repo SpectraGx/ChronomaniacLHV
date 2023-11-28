@@ -7,15 +7,16 @@ public class MoveFer : MonoBehaviour
     public Weapons currentWeapon;
     public float speedMove = 5f;
     public Transform weapon;
-    public int maxHealth = 100; 
-    private int currentHealth; 
+    public int maxHealth = 100;
+    private int currentHealth;
     private Vector3 initialPosition;
     public float knockbackForce = 10f;
     private Rigidbody2D rb;
+    private bool isKnockedBack = false;
 
     private void Start()
     {
-        currentHealth = maxHealth; 
+        currentHealth = maxHealth;
         initialPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
         initialPosition = transform.position;
@@ -23,20 +24,12 @@ public class MoveFer : MonoBehaviour
 
     private void Update()
     {
-       
         float moveHori = Input.GetAxis("Horizontal");
         float moveVerti = Input.GetAxis("Vertical");
-
-        
         Vector3 direcMove = new Vector3(moveHori, moveVerti, 0f);
-
-        
         direcMove.Normalize();
-
-        
         transform.Translate(direcMove * speedMove * Time.deltaTime);
 
-        // Rotación del arma
         Vector3 displacement = weapon.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float angle = Mathf.Atan2(displacement.y, displacement.x) * Mathf.Rad2Deg;
         weapon.rotation = Quaternion.Euler(0f, 0f, angle);
@@ -44,15 +37,19 @@ public class MoveFer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Verificar si la colisión es con un enemigo
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            TakeHitAndKnockback(collision.contacts[0].point);
-            TakeDamage(20);
-
-            if (currentHealth <= 0)
+            if (!isKnockedBack)
             {
-                Respawn();
+                TakeHitAndKnockback(collision.contacts[0].point);
+                TakeDamage(20);
+                isKnockedBack = true;
+                Invoke("ResetKnockback", 0.5f); 
+
+                if (currentHealth <= 0)
+                {
+                    Respawn();
+                }
             }
         }
     }
@@ -63,7 +60,7 @@ public class MoveFer : MonoBehaviour
     }
 
     private void Respawn()
-    {      
+    {
         transform.position = initialPosition;
         currentHealth = maxHealth;
     }
@@ -77,5 +74,11 @@ public class MoveFer : MonoBehaviour
     {
         Vector2 knockbackDirection = ((Vector2)transform.position - hitPoint).normalized;
         rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+    }
+
+    private void ResetKnockback()
+    {
+        isKnockedBack = false;
+        rb.velocity = Vector2.zero; 
     }
 }
