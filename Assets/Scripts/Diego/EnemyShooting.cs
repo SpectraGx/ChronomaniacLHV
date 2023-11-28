@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemigo : MonoBehaviour
+public class EnemyShooting : MonoBehaviour
 {
     public float velocidadMovimiento = 3f;
     public float frecuenciaDisparo = 2f;
