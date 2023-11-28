@@ -1,53 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShooting : MonoBehaviour
+public class Enemigo : MonoBehaviour
 {
+    public float velocidadMovimiento = 3f;
+    public float frecuenciaDisparo = 2f;
     public GameObject bulletEnemy;
-    public string playerTag = "Player";
-    public float fireRate = 0.7f;
-    public float bulletSpeed = 4.0f;
-    public float spawnOffset = 0.5f;
+    public Transform puntoDisparo;
 
-    private Transform player;
-    private float nextFireTime = 0f;
+    private Transform jugador;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag(playerTag)?.transform;
-
-        if (player == null)
-        {
-            Debug.LogError("Player not found");
-        }
+        jugador = GameObject.FindGameObjectWithTag("Player").transform;
+        InvokeRepeating("Disparar", 1f, 1f / frecuenciaDisparo);
     }
 
     private void Update()
     {
-        if (Time.time >= nextFireTime)
+        MoverHaciaJugador();
+    }
+
+    private void MoverHaciaJugador()
+    {
+        if (jugador != null)
         {
-            nextFireTime = Time.time + fireRate;
-            ShootAtPlayer();
+            Vector3 direccion = jugador.position - transform.position;
+            direccion.Normalize();
+            transform.Translate(direccion * velocidadMovimiento * Time.deltaTime);
         }
     }
 
-    private void ShootAtPlayer()
+    private void Disparar()
     {
-        if (player != null)
+        if (jugador != null && bulletEnemy != null && puntoDisparo != null)
         {
-            Vector2 direction = (player.position - transform.position).normalized;
-            Vector2 spawnPosition = (Vector2)transform.position + direction * spawnOffset;
-
-            GameObject bullet = Instantiate(bulletEnemy, spawnPosition, Quaternion.identity);
-            Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-
-            if (bulletRb != null)
-            {
-                bulletRb.velocity = direction * bulletSpeed;
-            }
-
-            Destroy(bullet, 2f);
+            GameObject proyectil = Instantiate(bulletEnemy, puntoDisparo.position, Quaternion.identity);
+            Vector2 direccion = (jugador.position - puntoDisparo.position).normalized;
+            proyectil.GetComponent<Rigidbody2D>().velocity = direccion * 10f;
         }
     }
 }
