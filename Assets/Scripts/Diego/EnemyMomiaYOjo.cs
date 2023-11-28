@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class EnemyMomia : MonoBehaviour
+public class EnemyMomiaYOjo : MonoBehaviour
 {
     public float velocidadMovimiento = 3f;
     public float frecuenciaDisparo = 2f;
     public float velocidadBala = 10f;
+    public float tiempoDeVidaBala = 1.5f; // Nuevo parámetro para el tiempo de vida de la bala
     public GameObject bulletMomia;
     public Transform puntoDisparo;
     public Transform weaponMomia;
@@ -23,11 +24,8 @@ public class EnemyMomia : MonoBehaviour
 
         if (jugador != null && weaponMomia != null)
         {
-            
             Vector3 direccion = jugador.position - weaponMomia.position;
-            direccion.z = 0; 
-
-           
+            direccion.z = 0;
             weaponMomia.up = direccion.normalized;
         }
     }
@@ -49,7 +47,8 @@ public class EnemyMomia : MonoBehaviour
             GameObject proyectil = Instantiate(bulletMomia, puntoDisparo.position, Quaternion.identity);
             Vector2 direccion = (jugador.position - puntoDisparo.position).normalized;
             proyectil.GetComponent<Rigidbody2D>().velocity = direccion * velocidadBala;
+
+            Destroy(proyectil, tiempoDeVidaBala);
         }
     }
 }
-
