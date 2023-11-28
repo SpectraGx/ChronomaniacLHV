@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8487318151692812973}
   - component: {fileID: -4343915997593560083}
   m_Layer: 0
-  m_Name: bulletEnemy
+  m_Name: bulletMomia
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,4 +160,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
