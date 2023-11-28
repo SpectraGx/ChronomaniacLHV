@@ -252,6 +252,7 @@ MonoBehaviour:
   velocidadBala: 5.5
   bulletMomia: {fileID: 7909000270825186996, guid: a821cdd344b5a284cb5d9f053eb19a95, type: 3}
   puntoDisparo: {fileID: 1517672227}
+  weaponMomia: {fileID: 1217671343}
 --- !u!50 &408346227
 Rigidbody2D:
   serializedVersion: 4

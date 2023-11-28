@@ -7,6 +7,7 @@ public class EnemyMomia : MonoBehaviour
     public float velocidadBala = 10f; 
     public GameObject bulletMomia;
     public Transform puntoDisparo;
+    public Transform weaponMomia;
 
     private Transform jugador;
 
