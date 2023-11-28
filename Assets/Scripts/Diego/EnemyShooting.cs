@@ -8,16 +8,18 @@ public class EnemyShooting : MonoBehaviour
     public string playerTag = "Player";
     public float fireRate = 0.7f;
     public float bulletSpeed = 4.0f;
+    public float spawnOffset = 0.5f;
 
     private Transform player;
     private float nextFireTime = 0f;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag(playerTag).transform;
+        player = GameObject.FindGameObjectWithTag(playerTag)?.transform;
+
         if (player == null)
         {
-            Debug.LogError("Player no encontrado");
+            Debug.LogError("Player not found");
         }
     }
 
@@ -35,10 +37,9 @@ public class EnemyShooting : MonoBehaviour
         if (player != null)
         {
             Vector2 direction = (player.position - transform.position).normalized;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
+            Vector2 spawnPosition = (Vector2)transform.position + direction * spawnOffset;
 
-            GameObject bullet = Instantiate(bulletEnemy, transform.position, rotation);
+            GameObject bullet = Instantiate(bulletEnemy, spawnPosition, Quaternion.identity);
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
 
             if (bulletRb != null)
@@ -46,9 +47,7 @@ public class EnemyShooting : MonoBehaviour
                 bulletRb.velocity = direction * bulletSpeed;
             }
 
-            Destroy(bullet, 2f); // Destruye la bala
-
+            Destroy(bullet, 2f);
         }
     }
-
 }
