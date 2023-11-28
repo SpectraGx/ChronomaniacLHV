@@ -4,7 +4,7 @@ public class EnemyMomia : MonoBehaviour
 {
     public float velocidadMovimiento = 3f;
     public float frecuenciaDisparo = 2f;
-    public float velocidadBala = 10f; 
+    public float velocidadBala = 10f;
     public GameObject bulletMomia;
     public Transform puntoDisparo;
     public Transform weaponMomia;
@@ -20,6 +20,16 @@ public class EnemyMomia : MonoBehaviour
     private void Update()
     {
         MoverHaciaJugador();
+
+        if (jugador != null && weaponMomia != null)
+        {
+            
+            Vector3 direccion = jugador.position - weaponMomia.position;
+            direccion.z = 0; 
+
+           
+            weaponMomia.up = direccion.normalized;
+        }
     }
 
     private void MoverHaciaJugador()
@@ -38,7 +48,8 @@ public class EnemyMomia : MonoBehaviour
         {
             GameObject proyectil = Instantiate(bulletMomia, puntoDisparo.position, Quaternion.identity);
             Vector2 direccion = (jugador.position - puntoDisparo.position).normalized;
-            proyectil.GetComponent<Rigidbody2D>().velocity = direccion * velocidadBala; 
+            proyectil.GetComponent<Rigidbody2D>().velocity = direccion * velocidadBala;
         }
     }
 }
+
