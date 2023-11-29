@@ -12,7 +12,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField, TextArea(4, 5)] private string[] dialogueLines;
 
 
-    private float typingTime = 0.05f;
+    private float typingTime = 0.01f;
 
 
     private bool isPlayerInRange;
@@ -44,7 +44,7 @@ public class Dialogue : MonoBehaviour
     {
         didDialogueStart = true;
         dialoguePanel.SetActive(true);
-        dialogueMark.SetActive(false);
+        //dialogueMark.SetActive(false);
         lineIndex = 0;
         Time.timeScale=0f;
         StartCoroutine(ShowLine());
@@ -58,7 +58,7 @@ public class Dialogue : MonoBehaviour
         else {
             didDialogueStart = false;
             dialoguePanel.SetActive(false);
-            dialogueMark.SetActive(true);
+            //dialogueMark.SetActive(true);
             Time.timeScale=1f;
         }
     }
@@ -77,7 +77,7 @@ public class Dialogue : MonoBehaviour
         if (other.gameObject.CompareTag("PJ"))
         {
             isPlayerInRange = true;
-            dialogueMark.SetActive(true);
+            //dialogueMark.SetActive(true);
             Debug.Log("Se puede activar dialogo");
         }
 
@@ -88,7 +88,7 @@ public class Dialogue : MonoBehaviour
         if (other.gameObject.CompareTag("PJ"))
         {
             isPlayerInRange = false;
-            dialogueMark.SetActive(false);
+            //dialogueMark.SetActive(false);
             Debug.Log("No se puede activar dialogo");
         }
     }
