@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2653071984554513442}
   - component: {fileID: 5642703543851153988}
   - component: {fileID: 4087910002796132300}
+  - component: {fileID: 4586717198852433009}
   m_Layer: 0
   m_Name: Momia
   m_TagString: Enemy
@@ -179,6 +180,20 @@ MonoBehaviour:
   bulletMomia: {fileID: 7909000270825186996, guid: a821cdd344b5a284cb5d9f053eb19a95, type: 3}
   puntoDisparo: {fileID: 8174843253908719370}
   weaponMomia: {fileID: 4691858055665981555}
+--- !u!114 &4586717198852433009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257656410643741273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950b3886a0841f643be3d8d6e28539b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidaMaxima: 100
+  vidaActual: 0
 --- !u!1 &2296205528350968998
 GameObject:
   m_ObjectHideFlags: 0

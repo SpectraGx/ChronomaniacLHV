@@ -549,6 +549,7 @@ GameObject:
   - component: {fileID: 787136362}
   - component: {fileID: 787136358}
   - component: {fileID: 787136357}
+  - component: {fileID: 787136363}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -724,9 +725,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 3
+  currentHealth: 0
   knockbackForce: 4
   barraVid: {fileID: 899325570}
+--- !u!114 &787136363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787136356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb44fbecd57f524597ddeeb007b4d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointShot: {fileID: 1716310992}
+  projectilePistol: {fileID: 3322686095650238354, guid: c74cb204744751240b5bcc101d5b7eb1, type: 3}
+  pelletsCount: 3
+  spreadAngle: 45
+  fireRate: 1
 --- !u!1 &899325568
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ TagManager:
   - PJ
   - Enemy
   - Weapon
+  - balaPlayer
   layers:
   - Default
   - TransparentFX

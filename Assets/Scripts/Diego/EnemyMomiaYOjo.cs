@@ -5,7 +5,7 @@ public class EnemyMomiaYOjo : MonoBehaviour
     public float velocidadMovimiento = 3f;
     public float frecuenciaDisparo = 2f;
     public float velocidadBala = 10f;
-    public float tiempoDeVidaBala = 1.5f; // Nuevo parámetro para el tiempo de vida de la bala
+    public float tiempoDeVidaBala = 1.5f; 
     public GameObject bulletMomia;
     public Transform puntoDisparo;
     public Transform weaponMomia;
