@@ -50,7 +50,7 @@ public class Dialogue : MonoBehaviour
         StartCoroutine(ShowLine());
     }
 
-    private void NextDialogueLine(){
+    public void NextDialogueLine(){
         lineIndex++;
         if  (lineIndex < dialogueLines.Length){
             StartCoroutine(ShowLine());
