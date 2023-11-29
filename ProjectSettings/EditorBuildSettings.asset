@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Escenas Importantes/Lobby.unity
     guid: e1eb2fadaa01812428ae2f6bc787e7ad
+  - enabled: 1
+    path: Assets/Scenes/Escenas Importantes/Gameplay.unity
+    guid: 02b135b0ed59e8b4bb68edc06528b4e8
   m_configObjects: {}
