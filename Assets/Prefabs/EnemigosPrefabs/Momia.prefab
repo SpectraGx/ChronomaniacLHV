@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadMovimiento: 2
   frecuenciaDisparo: 0.4
-  velocidadBala: 9
+  velocidadBala: 5
   tiempoDeVidaBala: 1.5
   bulletMomia: {fileID: 7909000270825186996, guid: a821cdd344b5a284cb5d9f053eb19a95, type: 3}
   puntoDisparo: {fileID: 8174843253908719370}

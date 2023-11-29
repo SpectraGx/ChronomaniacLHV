@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadMovimiento: 3
   frecuenciaDisparo: 0.3
-  velocidadBala: 7
+  velocidadBala: 5
   tiempoDeVidaBala: 1.5
   numBalasPorDisparo: 3
   "anguloDispersi\xF3n": 45
