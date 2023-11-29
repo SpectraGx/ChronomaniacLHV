@@ -20,6 +20,8 @@ public class Vida : MonoBehaviour
         initialPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
         initialPosition = transform.position;
+
+  
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

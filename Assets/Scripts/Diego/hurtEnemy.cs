@@ -1,37 +1,46 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class VidaEnemigo : MonoBehaviour
+public class hurtEnemy : MonoBehaviour
 {
-    public int vidaMaxima = 100;
-    public int vidaActual;
+    public int maxHealth = 100;
+    public int currentHealth;
+    private Vector3 initialPosition;
+    private Rigidbody2D rb;
+    private bool isKnockedBack = false;
 
     private void Start()
     {
-        vidaActual = vidaMaxima;
+        currentHealth = maxHealth;
+        initialPosition = transform.position;
+        rb = GetComponent<Rigidbody2D>();
+        initialPosition = transform.position;
+
+
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.CompareTag("balaPlayer"))
+        if (collision.gameObject.CompareTag("balaPlayer"))
         {
-            TomarDanio(20);
-            Destroy(other.gameObject);
+            if (!isKnockedBack)
+            {
+                TakeDamage(20);
+                isKnockedBack = true;               
+            }
         }
     }
 
-    void TomarDanio(int cantidad)
+    private void TakeDamage(int damage)
     {
-        vidaActual -= cantidad;
+        currentHealth -= damage;
+        currentHealth = Mathf.Max(currentHealth, 0);
 
-        if (vidaActual <= 0)
+        if (currentHealth <= 0)
         {
-            vidaActual = 0;
-            DestruirEnemigo();
+            Destroy(gameObject);
         }
-    }
-
-    void DestruirEnemigo()
-    {
-        Destroy(gameObject);
     }
 }

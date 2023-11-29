@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   currentWeaponSpr: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 3322686095650238354, guid: c74cb204744751240b5bcc101d5b7eb1, type: 3}
   fireRate: 0.5
   damage: 60
   shootBullets: []

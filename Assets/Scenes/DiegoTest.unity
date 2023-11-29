@@ -726,7 +726,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  knockbackForce: 4
   barraVid: {fileID: 899325570}
 --- !u!114 &787136363
 MonoBehaviour:
@@ -741,9 +740,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PointShot: {fileID: 1716310992}
-  projectilePistol: {fileID: 3322686095650238354, guid: c74cb204744751240b5bcc101d5b7eb1, type: 3}
-  pelletsCount: 3
-  spreadAngle: 45
+  bulletPrefab: {fileID: 3322686095650238354, guid: c74cb204744751240b5bcc101d5b7eb1, type: 3}
+  pelletsCount: 8
+  spreadAngle: 40
   fireRate: 1
 --- !u!1 &899325568
 GameObject:

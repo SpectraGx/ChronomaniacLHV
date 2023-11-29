@@ -26,22 +26,9 @@ public class Pistol : MonoBehaviour
             {
                 nextShotTime = Time.time + timeBetweenShots;
                 GameObject projectile = Instantiate(projectilePistol, PointShot.position, PointShot.rotation);
-
-                Destroy(projectilePistol, 1.5f);
+           
             }
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        // Verifica si el objeto con el que colisionó tiene el tag "Enemy"
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            // Destruye al enemigo
-            Destroy(collision.gameObject);
-        }
-
-        // Destruye la bala
-        Destroy(gameObject);
-    }
 }
