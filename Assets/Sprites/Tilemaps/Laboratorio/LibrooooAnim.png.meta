@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2df8d644ab17da44291b924ffa64e39c
-      internalID: 1377453301
+      spriteID: 7d6afb8d915e5b643953554524f105bf
+      internalID: -1210880441
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea41ca2746d34d24d88bf00bc2b3ce48
-      internalID: -900816265
+      spriteID: 0d5fbe4d6bfa084459b9834dd00ba089
+      internalID: -141989966
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a17902423ff2f748bcb74f52550badf
-      internalID: -815842356
+      spriteID: 1df8120f2608547478a17f3205750b10
+      internalID: 1200104372
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LibrooooAnim_0: 1377453301
-      LibrooooAnim_1: -900816265
-      LibrooooAnim_2: -815842356
+      LibrooooAnim_0: -1210880441
+      LibrooooAnim_1: -141989966
+      LibrooooAnim_2: 1200104372
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

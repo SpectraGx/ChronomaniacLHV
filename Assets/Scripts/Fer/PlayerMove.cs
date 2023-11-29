@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    private Animator animator;
     private Rigidbody2D playerRB;
     private Vector2 moveInput;
 
@@ -27,11 +28,19 @@ public class PlayerMove : MonoBehaviour
     private bool canDash = true;
     private bool canMove = true;
 
+    [Header("Animations")]
+    private string currentState;
+    const string Player_Idle = "player_idle";
+    const string Player_Up = "player_up";
+    const string Player_Down = "player_down";
+    const string Player_Run = "player_run";
+
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
         currentTime = timeSprint;
         gravityStart = playerRB.gravityScale;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -85,6 +94,56 @@ public class PlayerMove : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
+
+        //          CAMBIO DE ESTADO            //      
+
+        if (moveInput.magnitude > 0)
+        {
+            if (moveInput.y > 0)
+            {
+                ChangeAnimationState(Player_Up);
+            }
+            else if (moveInput.y < 0)
+            {
+                ChangeAnimationState(Player_Down);
+            }
+            else if (moveInput.x<0)
+            {
+                transform.localScale = new Vector2(1,1);
+                ChangeAnimationState(Player_Run);
+            }
+            else {
+                transform.localScale = new Vector2(-1,1);
+                ChangeAnimationState(Player_Run);
+            }
+        }
+        else
+        {
+            ChangeAnimationState(Player_Idle);
+        }
+
+        /*
+        if (moveInput.x<0){
+            transform.localScale = new Vector2(-1,1);
+            ChangeAnimationState(Player_Run);
+        }
+        else if (moveInput.x>0){
+            transform.localScale = new Vector2(1,1);
+            ChangeAnimationState(Player_Run);
+        }
+        else {
+            ChangeAnimationState(Player_Idle);
+        }
+
+        if (moveInput.y>0){
+            ChangeAnimationState(Player_Up);
+        }
+        else if (moveInput.y<0){
+            ChangeAnimationState(Player_Down);
+        }
+        else {
+            ChangeAnimationState(Player_Idle);
+        }*/
     }
 
     private void FixedUpdate()
@@ -94,6 +153,15 @@ public class PlayerMove : MonoBehaviour
             Vector2 moveDirection = moveInput.normalized;
             playerRB.MovePosition(playerRB.position + moveDirection * speed * Time.fixedDeltaTime);
         }
+
+
+    }
+
+    void ChangeAnimationState(string newState)
+    {
+        if (currentState == newState) return;
+        animator.Play(newState);
+        currentState = newState;
     }
 
     private IEnumerator Dash()
