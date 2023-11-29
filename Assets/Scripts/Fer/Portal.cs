@@ -23,7 +23,7 @@ public class Portal : MonoBehaviour
 
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.N))
         {
-            dialogue.NextDialogueLine();
+            Input.GetKeyDown(KeyCode.E);
             Time.timeScale=1f;
         }
 

@@ -387,6 +387,7 @@ MonoBehaviour:
   dialogueLines:
   - 'Anomalia #0: Una especie antigua de gato llego a traves del portal durante las
     primeras pruebas'
+  didDialogueStart: 0
 --- !u!1 &414027335
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +557,7 @@ MonoBehaviour:
   dialogueText: {fileID: 414027337}
   dialogueLines:
   - Mi planta favorita, debemos cuidar mas al planeta
+  didDialogueStart: 0
 --- !u!61 &649210249
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4686,6 +4688,7 @@ MonoBehaviour:
   - 'Dia 14: Esto esta mal, jamas pense que podria traer tantas consecuencias este
     descubrimiento'
   - 'Dia 16: Cometi un error y tengo que arreglarlo'
+  didDialogueStart: 0
 --- !u!61 &1383327131
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4990,7 +4993,8 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1763359912}
   dialogueText: {fileID: 414027337}
   dialogueLines:
-  - "\xBFQuieres activar el portal?\nY=Si\nN=No"
+  - "\xBFQuieres activar el portal?\nY=Si\nE=No"
+  didDialogueStart: 0
 --- !u!61 &1802408887
 BoxCollider2D:
   m_ObjectHideFlags: 0

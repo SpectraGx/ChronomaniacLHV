@@ -16,7 +16,7 @@ public class Dialogue : MonoBehaviour
 
 
     private bool isPlayerInRange;
-    private bool didDialogueStart;
+    public bool didDialogueStart;
     private int lineIndex;
 
     // Update is called once per frame
