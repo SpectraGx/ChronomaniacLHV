@@ -121,29 +121,6 @@ public class PlayerMove : MonoBehaviour
         {
             ChangeAnimationState(Player_Idle);
         }
-
-        /*
-        if (moveInput.x<0){
-            transform.localScale = new Vector2(-1,1);
-            ChangeAnimationState(Player_Run);
-        }
-        else if (moveInput.x>0){
-            transform.localScale = new Vector2(1,1);
-            ChangeAnimationState(Player_Run);
-        }
-        else {
-            ChangeAnimationState(Player_Idle);
-        }
-
-        if (moveInput.y>0){
-            ChangeAnimationState(Player_Up);
-        }
-        else if (moveInput.y<0){
-            ChangeAnimationState(Player_Down);
-        }
-        else {
-            ChangeAnimationState(Player_Idle);
-        }*/
     }
 
     private void FixedUpdate()
