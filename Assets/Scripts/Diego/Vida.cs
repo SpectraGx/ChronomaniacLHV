@@ -34,6 +34,16 @@ public class Vida : MonoBehaviour
                 Invoke("ResetKnockback", 0.5f);
             }
         }
+        else if (other.CompareTag("BalaEnemy"))
+        {
+            if (!isKnockedBack)
+            {
+                TakeHitAndKnockback(other.ClosestPoint(transform.position));
+                TakeDamage(20);
+                isKnockedBack = true;
+                Invoke("ResetKnockback", 0.5f);
+            }
+        }
     }
 
     private void TakeDamage(int damage)
