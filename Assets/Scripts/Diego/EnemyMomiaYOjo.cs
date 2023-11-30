@@ -5,8 +5,7 @@ public class EnemyMomiaYOjo : MonoBehaviour
     public float velocidadMovimiento = 3f;
     public float frecuenciaDisparo = 2f;
     public float velocidadBala = 10f;
-    public float tiempoDeVidaBala = 1.5f; 
-    public GameObject bulletMomia;
+    public GameObject bulletMomiaPrefab;
     public Transform puntoDisparo;
     public Transform weaponMomia;
 
@@ -42,13 +41,21 @@ public class EnemyMomiaYOjo : MonoBehaviour
 
     private void Disparar()
     {
-        if (jugador != null && bulletMomia != null && puntoDisparo != null)
+        if (jugador != null && bulletMomiaPrefab != null && puntoDisparo != null)
         {
-            GameObject proyectil = Instantiate(bulletMomia, puntoDisparo.position, Quaternion.identity);
+            GameObject proyectil = Instantiate(bulletMomiaPrefab, puntoDisparo.position, Quaternion.identity);
             Vector2 direccion = (jugador.position - puntoDisparo.position).normalized;
             proyectil.GetComponent<Rigidbody2D>().velocity = direccion * velocidadBala;
 
-            Destroy(proyectil, tiempoDeVidaBala);
+            proyectil.AddComponent<BalaEnemigo>();
         }
+    }
+}
+
+public class BalaEnemigo : MonoBehaviour
+{
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

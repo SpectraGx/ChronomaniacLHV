@@ -20,17 +20,15 @@ public class Vida : MonoBehaviour
         initialPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
         initialPosition = transform.position;
-
-  
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
             if (!isKnockedBack)
             {
-                TakeHitAndKnockback(collision.contacts[0].point);
+                TakeHitAndKnockback(other.ClosestPoint(transform.position));
                 TakeDamage(20);
                 isKnockedBack = true;
                 Invoke("ResetKnockback", 0.5f);

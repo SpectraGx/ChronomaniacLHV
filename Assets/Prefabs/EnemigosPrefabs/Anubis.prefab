@@ -118,7 +118,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -194,8 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 950b3886a0841f643be3d8d6e28539b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMaxima: 100
-  vidaActual: 0
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &3070624747683616847
 GameObject:
   m_ObjectHideFlags: 0
