@@ -175,8 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadMovimiento: 3
   frecuenciaDisparo: 0.3
-  velocidadBala: 5
-  tiempoDeVidaBala: 1.5
+  velocidadBala: 6
   numBalasPorDisparo: 3
   "anguloDispersi\xF3n": 45
   bulletAnubis: {fileID: 7239968881957022391, guid: 6c4ad0441487c8f4eb725a9bcf9de8f6, type: 3}

@@ -5,7 +5,6 @@ public class EnemyAnubis : MonoBehaviour
     public float velocidadMovimiento = 3f;
     public float frecuenciaDisparo = 2f;
     public float velocidadBala = 10f;
-    public float tiempoDeVidaBala = 1.5f;
     public int numBalasPorDisparo = 5; // balas en cada disparo
     public float anguloDispersión = 15f; // dispersión de las balas
     public GameObject bulletAnubis;
@@ -54,8 +53,6 @@ public class EnemyAnubis : MonoBehaviour
                 
                 GameObject proyectil = Instantiate(bulletAnubis, puntoDisparo.position, rotacionDisparo);
                 proyectil.GetComponent<Rigidbody2D>().velocity = direccionDisparo * velocidadBala;
-
-                Destroy(proyectil, tiempoDeVidaBala);
             }
         }
     }

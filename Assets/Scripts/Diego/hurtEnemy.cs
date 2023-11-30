@@ -21,9 +21,9 @@ public class hurtEnemy : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("balaPlayer"))
+        if (other.CompareTag("balaPlayer"))
         {
             if (!isKnockedBack)
             {
