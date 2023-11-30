@@ -9,6 +9,6 @@ public class SoundMaster : MonoBehaviour
     
     public void CambiarVolumen(float volumen) 
     {
-        audioMixer.SetFloat("Volumen", volumen);
+        audioMixer.SetFloat("Volume", volumen);
     }
 }
