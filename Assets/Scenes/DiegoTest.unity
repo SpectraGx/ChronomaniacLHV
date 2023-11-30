@@ -366,7 +366,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.503858
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -683,15 +683,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787136356}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bb44fbecd57f524597ddeeb007b4d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PointShot: {fileID: 1716310992}
   bulletPrefab: {fileID: 3322686095650238354, guid: c74cb204744751240b5bcc101d5b7eb1, type: 3}
-  pelletsCount: 8
-  spreadAngle: 40
+  pelletsCount: 3
+  spreadAngle: 45
   fireRate: 1
 --- !u!1 &899325568
 GameObject:
@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 1038674022}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Pared
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -993,7 +993,7 @@ GameObject:
   - component: {fileID: 1811691488}
   m_Layer: 0
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: Pared
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1151,7 +1151,7 @@ GameObject:
   - component: {fileID: 1868065757}
   m_Layer: 0
   m_Name: Square (3)
-  m_TagString: Untagged
+  m_TagString: Pared
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1488,7 +1488,7 @@ GameObject:
   - component: {fileID: 2091993388}
   m_Layer: 0
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: Pared
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1666,7 +1666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7657062992190750281, guid: dceb8b0764e30fd49bff12573c8ba9d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.43
+      value: 8.13
       objectReference: {fileID: 0}
     - target: {fileID: 7657062992190750281, guid: dceb8b0764e30fd49bff12573c8ba9d8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1735,7 +1735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5420441212748549029, guid: a3dd143f1c5393d408724ca91a56bd6f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.39
+      value: 8.03
       objectReference: {fileID: 0}
     - target: {fileID: 5420441212748549029, guid: a3dd143f1c5393d408724ca91a56bd6f, type: 3}
       propertyPath: m_LocalPosition.y

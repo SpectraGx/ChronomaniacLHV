@@ -46,16 +46,6 @@ public class EnemyMomiaYOjo : MonoBehaviour
             GameObject proyectil = Instantiate(bulletMomiaPrefab, puntoDisparo.position, Quaternion.identity);
             Vector2 direccion = (jugador.position - puntoDisparo.position).normalized;
             proyectil.GetComponent<Rigidbody2D>().velocity = direccion * velocidadBala;
-
-            proyectil.AddComponent<BalaEnemigo>();
         }
-    }
-}
-
-public class BalaEnemigo : MonoBehaviour
-{
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
     }
 }

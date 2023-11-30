@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4611955806263039099}
   - component: {fileID: 5615500287816564232}
   - component: {fileID: 3684359788053291878}
+  - component: {fileID: -8064691227727584348}
   m_Layer: 0
   m_Name: bulletAnubis
   m_TagString: Enemy
@@ -148,3 +149,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.08
+--- !u!114 &-8064691227727584348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7239968881957022391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b5013ee4a267f459cbafef645d90ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
