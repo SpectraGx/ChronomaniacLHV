@@ -26,7 +26,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float timeDash;
     private float gravityStart;
     private bool canDash = true;
-    private bool canMove = true;
+    public bool canMove = true;
 
     [Header("Animations")]
     private string currentState;
@@ -130,8 +130,6 @@ public class PlayerMove : MonoBehaviour
             Vector2 moveDirection = moveInput.normalized;
             playerRB.MovePosition(playerRB.position + moveDirection * speed * Time.fixedDeltaTime);
         }
-
-
     }
 
     void ChangeAnimationState(string newState)

@@ -54,7 +54,7 @@ public class Vida : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Debug.Log("Murio");
         }
     }
 

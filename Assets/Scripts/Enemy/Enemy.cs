@@ -65,8 +65,10 @@ public class Enemy : MonoBehaviour
                 Quaternion rotacionDisparo = Quaternion.AngleAxis(anguloActual, Vector3.forward);
                 Vector2 direccionDisparo = rotacionDisparo * shootingPoint.up;
 
-                GameObject proyectil = Instantiate(bullet, shootingPoint.position, rotacionDisparo);
-                proyectil.GetComponent<Rigidbody2D>().velocity = direccionDisparo * speedBullet;
+                //GameObject proyectil = Instantiate(bullet, shootingPoint.position, rotacionDisparo);
+                //proyectil.GetComponent<Rigidbody2D>().velocity = direccionDisparo * speedBullet;
+
+                //GameObject balaE = EnemyPool.Instance.RequestBullet();
             }
         }
     }
