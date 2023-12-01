@@ -20,6 +20,7 @@ TagManager:
   - Weapon
   - ArmaLaser
   - ArmaAR
+  - ArmaShotgun
   layers:
   - Default
   - TransparentFX
