@@ -10,11 +10,9 @@ public class ControladorScripts : MonoBehaviour
 
     private void Start()
     {
-        // Asegúrate de que el script AtkMelee esté activado por defecto
         atkMeleeScript = GetComponent<AtkMelee>();
         atkMeleeScript.enabled = true;
 
-        // Desactiva los demás scripts inicialmente
         pistolScript = GetComponent<Pistol>();
         pistolScript.enabled = false;
 
@@ -33,22 +31,27 @@ public class ControladorScripts : MonoBehaviour
         if (other.CompareTag("ArmaPistol"))
         {
             ActivarPistol();
+            Destroy(other.gameObject);
         }
         else if (other.CompareTag("ArmaShotgun"))
         {
             ActivarShotgun();
+            Destroy(other.gameObject);
         }
         else if (other.CompareTag("ArmaAR"))
         {
             ActivarAR();
+            Destroy(other.gameObject);
         }
         else if (other.CompareTag("ArmaLaser"))
         {
             ActivarLaser();
+            Destroy(other.gameObject);
         }
         else if (other.CompareTag("ArmaAtkMelee"))
         {
             ActivarAtkMelee();
+            Destroy(other.gameObject);
         }
     }
 

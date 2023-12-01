@@ -7,7 +7,7 @@ public class AtkMelee : MonoBehaviour
     public Transform PointShot;
     public GameObject bulletPrefab;
     public float fireRate = 0.6f;
-    public float bulletLifetime = 0.1f; 
+    public float bulletLifetime = 0.2f; 
 
     private float nextFireTime = 0f;
 

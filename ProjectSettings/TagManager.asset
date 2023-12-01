@@ -8,7 +8,6 @@ TagManager:
   - SpawnPoint
   - PJ
   - Enemy
-  - Weapon
   - Pared
   - BalaEnemy
   - balaPistola
@@ -16,6 +15,8 @@ TagManager:
   - balaAR
   - balaLaser
   - hitMelee
+  - balaPlayer
+  - ArmaPistol
   layers:
   - Default
   - TransparentFX
