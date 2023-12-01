@@ -17,8 +17,6 @@ public class hurtEnemy : MonoBehaviour
         initialPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
         initialPosition = transform.position;
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -28,9 +26,23 @@ public class hurtEnemy : MonoBehaviour
             if (!isKnockedBack)
             {
                 TakeDamage(20);
-                isKnockedBack = true;               
+                isKnockedBack = true;
             }
         }
+    }
+
+    private void Update()
+    {
+        if (isKnockedBack)
+        {
+            StartCoroutine(ResetKnockback());
+        }
+    }
+
+    private IEnumerator ResetKnockback()
+    {
+        yield return new WaitForSeconds(1f);
+        isKnockedBack = false;
     }
 
     private void TakeDamage(int damage)
