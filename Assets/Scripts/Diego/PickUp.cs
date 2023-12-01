@@ -1,37 +1,99 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUp : MonoBehaviour
+public class ControladorScripts : MonoBehaviour
 {
+    private Pistol pistolScript;
+    private Shotgun shotgunScript;
+    private AR arScript;
+    private Laser laserScript;
+    private AtkMelee atkMeleeScript;
 
-    private void OnTriggerEnter2D(Collider2D target)
+    private void Start()
     {
-        if (target.CompareTag("Player"))
-        {           
-            Shotgun Shotgun = target.GetComponent<Shotgun>();
+        // Asegúrate de que el script AtkMelee esté activado por defecto
+        atkMeleeScript = GetComponent<AtkMelee>();
+        atkMeleeScript.enabled = true;
 
-            if (Shotgun == null)
-            {
-                target.gameObject.AddComponent<Shotgun>();
-                Debug.Log("Se ha agregado el script Shotgun al jugador.");
-            }
-           
-            if (Shotgun != null)
-            {
-                Shotgun.enabled = true;
-            }
-          
+        // Desactiva los demás scripts inicialmente
+        pistolScript = GetComponent<Pistol>();
+        pistolScript.enabled = false;
+
+        shotgunScript = GetComponent<Shotgun>();
+        shotgunScript.enabled = false;
+
+        arScript = GetComponent<AR>();
+        arScript.enabled = false;
+
+        laserScript = GetComponent<Laser>();
+        laserScript.enabled = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("ArmaPistol"))
+        {
+            ActivarPistol();
+        }
+        else if (other.CompareTag("ArmaShotgun"))
+        {
+            ActivarShotgun();
+        }
+        else if (other.CompareTag("ArmaAR"))
+        {
+            ActivarAR();
+        }
+        else if (other.CompareTag("ArmaLaser"))
+        {
+            ActivarLaser();
+        }
+        else if (other.CompareTag("ArmaAtkMelee"))
+        {
+            ActivarAtkMelee();
         }
     }
 
-    void Start()
+    private void ActivarPistol()
     {
-        // Inicialización si es necesario
+        pistolScript.enabled = true;
+        shotgunScript.enabled = false;
+        arScript.enabled = false;
+        laserScript.enabled = false;
+        atkMeleeScript.enabled = false;
     }
 
-    void Update()
+    private void ActivarShotgun()
     {
-        // Lógica de actualización si es necesario
+        pistolScript.enabled = false;
+        shotgunScript.enabled = true;
+        arScript.enabled = false;
+        laserScript.enabled = false;
+        atkMeleeScript.enabled = false;
+    }
+
+    private void ActivarAR()
+    {
+        pistolScript.enabled = false;
+        shotgunScript.enabled = false;
+        arScript.enabled = true;
+        laserScript.enabled = false;
+        atkMeleeScript.enabled = false;
+    }
+
+    private void ActivarLaser()
+    {
+        pistolScript.enabled = false;
+        shotgunScript.enabled = false;
+        arScript.enabled = false;
+        laserScript.enabled = true;
+        atkMeleeScript.enabled = false;
+    }
+
+    private void ActivarAtkMelee()
+    {
+        pistolScript.enabled = false;
+        shotgunScript.enabled = false;
+        arScript.enabled = false;
+        laserScript.enabled = false;
+        atkMeleeScript.enabled = true;
     }
 }

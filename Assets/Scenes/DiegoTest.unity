@@ -502,6 +502,7 @@ GameObject:
   - component: {fileID: 787136365}
   - component: {fileID: 787136366}
   - component: {fileID: 787136367}
+  - component: {fileID: 787136368}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -593,7 +594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bec21dd3cff8644a8cde9c5261eb8a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: {fileID: 11400000, guid: a2c2702161be62c4dadfee6609502955, type: 2}
   speedMove: 10
   weapon: {fileID: 418035505}
 --- !u!212 &787136360
@@ -749,7 +749,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787136356}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 648dd055863057744b9d2ba00b2b0cd6, type: 3}
   m_Name: 
@@ -758,6 +758,18 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1851586524363495373, guid: 8e59bc89435de0949a7a36b0e81378ed, type: 3}
   fireRate: 0.6
   bulletLifetime: 0.1
+--- !u!114 &787136368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787136356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aec64c51c4d76e14b9fb230dd3bdef4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &899325568
 GameObject:
   m_ObjectHideFlags: 0

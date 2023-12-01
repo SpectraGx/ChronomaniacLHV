@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveFer : MonoBehaviour
-{
-    public Weapons currentWeapon;
+{ 
     public float speedMove = 5f;
     public Transform weapon;
 
