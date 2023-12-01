@@ -6,7 +6,7 @@ public class Shotgun : MonoBehaviour
 {
     public Transform PointShot;
     public GameObject bulletPrefab;
-    public int pelletsCount = 8;
+    public int pelletsCount = 3;
     public float spreadAngle = 20f;
     public float fireRate = 1f;
 

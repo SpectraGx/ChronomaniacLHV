@@ -9,9 +9,13 @@ TagManager:
   - PJ
   - Enemy
   - Weapon
-  - balaPlayer
   - Pared
   - BalaEnemy
+  - balaPistola
+  - balaEscopeta
+  - balaAR
+  - balaLaser
+  - hitMelee
   layers:
   - Default
   - TransparentFX

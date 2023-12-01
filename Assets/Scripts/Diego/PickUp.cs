@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnTriggerEnter2D(Collider2D target)
     {
-        
+        if (target.CompareTag("Player"))
+        {           
+            Shotgun Shotgun = target.GetComponent<Shotgun>();
+
+            if (Shotgun == null)
+            {
+                target.gameObject.AddComponent<Shotgun>();
+                Debug.Log("Se ha agregado el script Shotgun al jugador.");
+            }
+           
+            if (Shotgun != null)
+            {
+                Shotgun.enabled = true;
+            }
+          
+        }
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        // Inicialización si es necesario
+    }
+
     void Update()
     {
-        
+        // Lógica de actualización si es necesario
     }
 }

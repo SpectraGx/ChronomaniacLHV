@@ -498,6 +498,10 @@ GameObject:
   - component: {fileID: 787136358}
   - component: {fileID: 787136357}
   - component: {fileID: 787136363}
+  - component: {fileID: 787136364}
+  - component: {fileID: 787136365}
+  - component: {fileID: 787136366}
+  - component: {fileID: 787136367}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -683,16 +687,77 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787136356}
-  m_Enabled: 1
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a19ec4ba8c23ff04e909238c912da590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointShot: {fileID: 1716310992}
+  bulletPrefab: {fileID: 3322686095650238354, guid: c74cb204744751240b5bcc101d5b7eb1, type: 3}
+  fireRate: 3
+--- !u!114 &787136364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787136356}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bb44fbecd57f524597ddeeb007b4d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PointShot: {fileID: 1716310992}
-  bulletPrefab: {fileID: 3322686095650238354, guid: c74cb204744751240b5bcc101d5b7eb1, type: 3}
-  pelletsCount: 8
+  bulletPrefab: {fileID: 1851586524363495373, guid: 63bd6717c8e81e549ab12edd9d74d75d, type: 3}
+  pelletsCount: 3
   spreadAngle: 20
   fireRate: 1
+--- !u!114 &787136365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787136356}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4f33b312886d6498bde8c96c5f9021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointShot: {fileID: 1716310992}
+  bulletPrefab: {fileID: 1851586524363495373, guid: 36fafc9f954418042ba4bdb7476d83c6, type: 3}
+  fireRate: 3.5
+--- !u!114 &787136366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787136356}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79fe751fac13654980272539a07dd56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointShot: {fileID: 1716310992}
+  bulletPrefab: {fileID: 1851586524363495373, guid: 4cccf80aebe029547b2fe571fa9c7d47, type: 3}
+  fireRate: 0.6
+--- !u!114 &787136367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787136356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648dd055863057744b9d2ba00b2b0cd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointShot: {fileID: 1716310992}
+  bulletPrefab: {fileID: 1851586524363495373, guid: 8e59bc89435de0949a7a36b0e81378ed, type: 3}
+  fireRate: 0.6
+  bulletLifetime: 0.1
 --- !u!1 &899325568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1644,6 +1709,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8621817452815275909, guid: dceb8b0764e30fd49bff12573c8ba9d8, type: 3}
+      propertyPath: maxHealth
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 243020905119016783, guid: dceb8b0764e30fd49bff12573c8ba9d8, type: 3}
       propertyPath: m_Name
       value: Ojo
@@ -1717,6 +1786,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8874545792939076968, guid: a3dd143f1c5393d408724ca91a56bd6f, type: 3}
+      propertyPath: maxHealth
+      value: 170
+      objectReference: {fileID: 0}
     - target: {fileID: 1170179970158388426, guid: a3dd143f1c5393d408724ca91a56bd6f, type: 3}
       propertyPath: m_Name
       value: Anubis
@@ -1841,6 +1914,10 @@ PrefabInstance:
     - target: {fileID: 4087910002796132300, guid: 9d37cd59a1c3f2049bca33ad6789284b, type: 3}
       propertyPath: velocidadMovimiento
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586717198852433009, guid: 9d37cd59a1c3f2049bca33ad6789284b, type: 3}
+      propertyPath: maxHealth
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

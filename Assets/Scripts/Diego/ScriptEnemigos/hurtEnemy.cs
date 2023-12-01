@@ -21,11 +21,42 @@ public class hurtEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("balaPlayer"))
+        if (other.CompareTag("balaPistola"))
         {
             if (!isKnockedBack)
             {
                 TakeDamage(20);
+                isKnockedBack = true;
+            }
+        } else if (other.CompareTag("balaEscopeta"))
+        {
+            if (!isKnockedBack)
+            {
+                TakeDamage(35);
+                isKnockedBack = true;
+            }
+        } 
+        else if (other.CompareTag("balaAR"))
+        {
+            if (!isKnockedBack)
+            {
+                TakeDamage(3);
+                isKnockedBack = true;
+            }
+        }
+        else if (other.CompareTag("balaLaser"))
+        {
+            if (!isKnockedBack)
+            {
+                TakeDamage(80);
+                isKnockedBack = true;
+            }
+        }
+        else if (other.CompareTag("hitMelee"))
+        {
+            if (!isKnockedBack)
+            {
+                TakeDamage(100);
                 isKnockedBack = true;
             }
         }
