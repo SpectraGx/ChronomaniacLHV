@@ -6,9 +6,7 @@ public class EnemyFollow : MonoBehaviour
 {
     private Animator animator;
     [SerializeField] private float speedEnemy;
-    [SerializeField] private Transform player;
     [SerializeField] private float minDistance;
-    //private bool isFacingRight = true;
 
     [Header("Animations")]
     private string currentState;
@@ -25,9 +23,11 @@ public class EnemyFollow : MonoBehaviour
     {
         Follow();
 
-        if (Vector2.Distance(transform.position, player.position) > minDistance)
+        GameObject player = GameObject.FindGameObjectWithTag("PJ");
+
+        if (player != null && Vector2.Distance(transform.position, player.transform.position) > minDistance)
         {
-            Vector2 direction = (player.position - transform.position).normalized;
+            Vector2 direction = (player.transform.position - transform.position).normalized;
 
             if (Mathf.Abs(direction.y) > Mathf.Abs(direction.x))
             {
@@ -57,9 +57,11 @@ public class EnemyFollow : MonoBehaviour
 
     private void Follow()
     {
-        if (Vector2.Distance(transform.position, player.position) > minDistance)
+        GameObject player = GameObject.FindGameObjectWithTag("PJ");
+
+        if (player != null && Vector2.Distance(transform.position, player.transform.position) > minDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speedEnemy * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speedEnemy * Time.deltaTime);
         }
     }
 

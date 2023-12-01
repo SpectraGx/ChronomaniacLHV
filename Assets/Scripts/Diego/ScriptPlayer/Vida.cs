@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Vida : MonoBehaviour
 {
@@ -54,7 +55,7 @@ public class Vida : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Debug.Log("Murio");
+            SceneManager.LoadScene("GameOver");
         }
     }
 

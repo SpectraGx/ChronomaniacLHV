@@ -21,6 +21,7 @@ TagManager:
   - ArmaLaser
   - ArmaAR
   - ArmaShotgun
+  - Boss
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
     private Animator animator;
     private Rigidbody2D playerRB;
     private Vector2 moveInput;
+    [SerializeField] private Transform weapon;
 
     [Header("Sprint")]
     [SerializeField] private float speed = 5f;
@@ -33,7 +34,9 @@ public class PlayerMove : MonoBehaviour
     const string Player_Idle = "player_idle";
     const string Player_Up = "player_up";
     const string Player_Down = "player_down";
-    const string Player_Run = "player_run";
+    const string Player_Left = "player_left";
+    const string Player_Right = "player_right";
+
 
     void Start()
     {
@@ -109,18 +112,21 @@ public class PlayerMove : MonoBehaviour
             }
             else if (moveInput.x<0)
             {
-                transform.localScale = new Vector2(1,1);
-                ChangeAnimationState(Player_Run);
+                ChangeAnimationState(Player_Left);
             }
             else {
-                transform.localScale = new Vector2(-1,1);
-                ChangeAnimationState(Player_Run);
+                ChangeAnimationState(Player_Right);
             }
         }
         else
         {
             ChangeAnimationState(Player_Idle);
         }
+
+        //          Arma            //      
+        Vector3 displacement = weapon.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        float angle = Mathf.Atan2(displacement.y, displacement.x) * Mathf.Rad2Deg;
+        weapon.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 
     private void FixedUpdate()

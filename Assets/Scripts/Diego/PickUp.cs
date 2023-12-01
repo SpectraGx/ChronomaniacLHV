@@ -36,19 +36,19 @@ public class ControladorScripts : MonoBehaviour
             {
                 ActivarPistol();
                 other.gameObject.SetActive(false);
-                ActivarAtkMeleeDespuesDeDelay();
+                //ActivarAtkMeleeDespuesDeDelay();
             }
             else if (other.CompareTag("ArmaShotgun"))
             {
                 ActivarShotgun();
                 other.gameObject.SetActive(false);
-                ActivarAtkMeleeDespuesDeDelay();
+                //ActivarAtkMeleeDespuesDeDelay();
             }
             else if (other.CompareTag("ArmaAR"))
             {
                 ActivarAR();
                 other.gameObject.SetActive(false);
-                ActivarAtkMeleeDespuesDeDelay();
+                //ActivarAtkMeleeDespuesDeDelay();
             }
             else if (other.CompareTag("ArmaLaser"))
             {
@@ -99,6 +99,10 @@ public class ControladorScripts : MonoBehaviour
     {
         CancelInvoke("ActivarAtkMelee");
         Invoke("ActivarAtkMelee", 10f);
+    }
+
+    private void ActivarPistolPerma(){
+        
     }
 
     private void ActivarAtkMelee()
