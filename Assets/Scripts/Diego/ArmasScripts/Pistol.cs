@@ -12,7 +12,7 @@ public class Pistol : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
+        if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + 1f / fireRate;
             Fire();

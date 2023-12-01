@@ -30,29 +30,32 @@ public class ControladorScripts : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("ArmaPistol") && !tieneCuchillo)
+        if (!tieneCuchillo)
         {
-            ActivarPistol();
-            Destroy(other.gameObject);
-            ActivarAtkMeleeDespuesDeDelay();
-        }
-        else if (other.CompareTag("ArmaShotgun") && !tieneCuchillo)
-        {
-            ActivarShotgun();
-            Destroy(other.gameObject);
-            ActivarAtkMeleeDespuesDeDelay();
-        }
-        else if (other.CompareTag("ArmaAR") && !tieneCuchillo)
-        {
-            ActivarAR();
-            Destroy(other.gameObject);
-            ActivarAtkMeleeDespuesDeDelay();
-        }
-        else if (other.CompareTag("ArmaLaser") && !tieneCuchillo)
-        {
-            ActivarLaser();
-            Destroy(other.gameObject);
-            ActivarAtkMeleeDespuesDeDelay();
+            if (other.CompareTag("ArmaPistol"))
+            {
+                ActivarPistol();
+                other.gameObject.SetActive(false);
+                ActivarAtkMeleeDespuesDeDelay();
+            }
+            else if (other.CompareTag("ArmaShotgun"))
+            {
+                ActivarShotgun();
+                other.gameObject.SetActive(false);
+                ActivarAtkMeleeDespuesDeDelay();
+            }
+            else if (other.CompareTag("ArmaAR"))
+            {
+                ActivarAR();
+                other.gameObject.SetActive(false);
+                ActivarAtkMeleeDespuesDeDelay();
+            }
+            else if (other.CompareTag("ArmaLaser"))
+            {
+                ActivarLaser();
+                other.gameObject.SetActive(false);
+                ActivarAtkMeleeDespuesDeDelay();
+            }
         }
     }
 
@@ -94,6 +97,7 @@ public class ControladorScripts : MonoBehaviour
 
     private void ActivarAtkMeleeDespuesDeDelay()
     {
+        CancelInvoke("ActivarAtkMelee");
         Invoke("ActivarAtkMelee", 10f);
     }
 
@@ -105,5 +109,12 @@ public class ControladorScripts : MonoBehaviour
         shotgunScript.enabled = false;
         arScript.enabled = false;
         laserScript.enabled = false;
+       
+        Invoke("RestablecerTieneCuchillo", 1f);
+    }
+
+    private void RestablecerTieneCuchillo()
+    {
+        tieneCuchillo = false;
     }
 }

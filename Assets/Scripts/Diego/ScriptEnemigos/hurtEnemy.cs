@@ -40,7 +40,7 @@ public class hurtEnemy : MonoBehaviour
         {
             if (!isKnockedBack)
             {
-                TakeDamage(3);
+                TakeDamage(18);
                 isKnockedBack = true;
             }
         }
