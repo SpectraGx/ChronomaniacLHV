@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 167146760691209532}
   m_Layer: 0
   m_Name: AR(Anubis)
-  m_TagString: Weapon
+  m_TagString: ArmaAR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

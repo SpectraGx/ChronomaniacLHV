@@ -8,6 +8,8 @@ public class ControladorScripts : MonoBehaviour
     private Laser laserScript;
     private AtkMelee atkMeleeScript;
 
+    private bool tieneCuchillo = false;
+
     private void Start()
     {
         atkMeleeScript = GetComponent<AtkMelee>();
@@ -28,30 +30,29 @@ public class ControladorScripts : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("ArmaPistol"))
+        if (other.CompareTag("ArmaPistol") && !tieneCuchillo)
         {
             ActivarPistol();
             Destroy(other.gameObject);
+            ActivarAtkMeleeDespuesDeDelay();
         }
-        else if (other.CompareTag("ArmaShotgun"))
+        else if (other.CompareTag("ArmaShotgun") && !tieneCuchillo)
         {
             ActivarShotgun();
             Destroy(other.gameObject);
+            ActivarAtkMeleeDespuesDeDelay();
         }
-        else if (other.CompareTag("ArmaAR"))
+        else if (other.CompareTag("ArmaAR") && !tieneCuchillo)
         {
             ActivarAR();
             Destroy(other.gameObject);
+            ActivarAtkMeleeDespuesDeDelay();
         }
-        else if (other.CompareTag("ArmaLaser"))
+        else if (other.CompareTag("ArmaLaser") && !tieneCuchillo)
         {
             ActivarLaser();
             Destroy(other.gameObject);
-        }
-        else if (other.CompareTag("ArmaAtkMelee"))
-        {
-            ActivarAtkMelee();
-            Destroy(other.gameObject);
+            ActivarAtkMeleeDespuesDeDelay();
         }
     }
 
@@ -91,12 +92,18 @@ public class ControladorScripts : MonoBehaviour
         atkMeleeScript.enabled = false;
     }
 
+    private void ActivarAtkMeleeDespuesDeDelay()
+    {
+        Invoke("ActivarAtkMelee", 10f);
+    }
+
     private void ActivarAtkMelee()
     {
+        tieneCuchillo = true;
+        atkMeleeScript.enabled = true;
         pistolScript.enabled = false;
         shotgunScript.enabled = false;
         arScript.enabled = false;
         laserScript.enabled = false;
-        atkMeleeScript.enabled = true;
     }
 }
